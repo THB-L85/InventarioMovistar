@@ -47,3 +47,5 @@ C:\Users\Richi\Documents\Visual Studio 2022\Proyecto\sistemainventariomovistar\o
 C:\Users\Richi\Documents\Visual Studio 2022\Proyecto\sistemainventariomovistar\obj\Debug\sistemainventariomovistar.exe
 C:\Users\Richi\Documents\Visual Studio 2022\Proyecto\sistemainventariomovistar\obj\Debug\sistemainventariomovistar.xml
 C:\Users\Richi\Documents\Visual Studio 2022\Proyecto\sistemainventariomovistar\obj\Debug\sistemainventariomovistar.pdb
+C:\Users\Richi\Documents\Visual Studio 2022\Proyecto\sistemainventariomovistar\bin\Debug\Guna.UI2.dll
+C:\Users\Richi\Documents\Visual Studio 2022\Proyecto\sistemainventariomovistar\obj\Debug\sistemainventariomovistar.vbproj.CopyComplete

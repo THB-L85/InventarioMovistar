@@ -2,13 +2,13 @@ Imports System.Data.SqlClient
 Public Class FrmLogin
     Dim formConfiguracion As New FrmConfiguracion
     Dim formPrincipal As New frmPrincipal
-    Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If UsernameTextBox.Text = "" Or PasswordTextBox.Text = "" Then
+    Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guna2BtnAccept.Click
+        If Guna2tbUser.Text = "" Or Guna2tbPassword.Text = "" Then
             MsgBox("Existen datos vacios", vbExclamation, "Operacion Cancelada")
         Else
             Try
                 conexion.Open()
-                adaptador = New SqlDataAdapter("SELECT * FROM Usuarios WHERE Usuario= '" & UsernameTextBox.Text & "' AND Password= '" & PasswordTextBox.Text & "' ", conexion)
+                adaptador = New SqlDataAdapter("SELECT * FROM Usuarios WHERE Usuario= '" & Guna2tbUser.Text & "' AND Password= '" & Guna2tbPassword.Text & "' ", conexion)
                 tabla.Clear()
                 adaptador.Fill(tabla)
                 If tabla.Rows.Count = 1 Then
@@ -19,14 +19,14 @@ Public Class FrmLogin
                     formPrincipal.ToolStripStatusLabel4.Text = tipousuario
 
                     MsgBox("Datos verificados", vbInformation, "Operacion completada")
-                    UsernameTextBox.Text = ""
-                    PasswordTextBox.Text = ""
+                    Guna2tbUser.Text = ""
+                    Guna2tbPassword.Text = ""
                     Me.Hide()
                     formPrincipal.Show()
                 Else
                     MsgBox("Nombre de Usuario o contraseña no valido", vbExclamation, "Operacion Cancelada")
-                    UsernameTextBox.Text = ""
-                    PasswordTextBox.Text = ""
+                    Guna2tbUser.Text = ""
+                    Guna2tbPassword.Text = ""
                 End If
                 conexion.Close()
 
@@ -36,7 +36,7 @@ Public Class FrmLogin
         End If
     End Sub
 
-    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guna2BtnCancel.Click
         Me.Close()
     End Sub
 
@@ -51,7 +51,7 @@ Public Class FrmLogin
         establecerconexion()
     End Sub
 
-    Private Sub UsernameTextBox_TextChanged(sender As Object, e As EventArgs) Handles UsernameTextBox.TextChanged
+    Private Sub UsernameTextBox_TextChanged(sender As Object, e As EventArgs) Handles Guna2tbUser.TextChanged
 
     End Sub
 End Class
