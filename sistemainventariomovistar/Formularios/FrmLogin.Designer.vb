@@ -122,6 +122,8 @@ Partial Class FrmLogin
         Me.Guna2tbPassword.Font = New System.Drawing.Font("Franklin Gothic Book", 11.25!)
         Me.Guna2tbPassword.ForeColor = System.Drawing.Color.Black
         Me.Guna2tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2tbPassword.IconLeft = CType(resources.GetObject("Guna2tbPassword.IconLeft"), System.Drawing.Image)
+        Me.Guna2tbPassword.IconLeftOffset = New System.Drawing.Point(5, 0)
         Me.Guna2tbPassword.Location = New System.Drawing.Point(85, 304)
         Me.Guna2tbPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2tbPassword.Name = "Guna2tbPassword"
@@ -149,8 +151,10 @@ Partial Class FrmLogin
         Me.Guna2tbUser.Font = New System.Drawing.Font("Franklin Gothic Book", 11.25!)
         Me.Guna2tbUser.ForeColor = System.Drawing.Color.Black
         Me.Guna2tbUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2tbUser.IconLeft = CType(resources.GetObject("Guna2tbUser.IconLeft"), System.Drawing.Image)
+        Me.Guna2tbUser.IconLeftOffset = New System.Drawing.Point(5, 0)
         Me.Guna2tbUser.Location = New System.Drawing.Point(85, 228)
-        Me.Guna2tbUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2tbUser.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2tbUser.Name = "Guna2tbUser"
         Me.Guna2tbUser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2tbUser.PlaceholderForeColor = System.Drawing.Color.Gray

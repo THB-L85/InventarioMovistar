@@ -2,22 +2,22 @@
 Imports System.Runtime.CompilerServices
 
 Public Class frmUsuarios
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles lblEstado.Click
+    Private Sub Label5_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles Guna2btnSave.Click
         insertar()
         Llenardatos()
         desactivarcontroles()
         limpiarcontroles()
     End Sub
 
-    Private Sub lblcontraseña_Click(sender As Object, e As EventArgs) Handles lblcontraseña.Click
+    Private Sub lblcontraseña_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, Guna2btnCancel.Click
         desactivarcontroles()
         limpiarcontroles()
     End Sub
@@ -25,43 +25,43 @@ Public Class frmUsuarios
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarcontroles()
         Llenardatos()
-        DgbUsuarios.AutoGenerateColumns = False
+        Guna2dtgUsuario.AutoGenerateColumns = False
 
     End Sub
     Sub desactivarcontroles()
-        BtnGuardar.Enabled = False
-        BtnEditar.Enabled = False
+        Guna2btnSave.Enabled = False
+        Guna2btnEdit.Enabled = False
         BtnCancelar.Enabled = False
-        BtnBorrar.Enabled = False
+        Guna2btnDelete.Enabled = False
 
-        txtUsuario.Enabled = False
-        txtNombrecompleto.Enabled = False
-        txtcontraseña.Enabled = False
-        cboestado.Enabled = False
-        cbotipousuario.Enabled = False
+        Guna2tbUser.Enabled = False
+        Guna2tbName.Enabled = False
+        Guna2tbPassword.Enabled = False
+        Guna2cbState.Enabled = False
+        Guna2cbType.Enabled = False
 
         BtnNuevo.Enabled = True
     End Sub
     Sub activarcontroles()
-        BtnGuardar.Enabled = True
-        BtnEditar.Enabled = False
+        Guna2btnSave.Enabled = True
+        Guna2btnEdit.Enabled = False
         BtnCancelar.Enabled = True
-        BtnBorrar.Enabled = False
+        Guna2btnDelete.Enabled = False
 
-        txtUsuario.Enabled = True
-        txtNombrecompleto.Enabled = True
-        txtcontraseña.Enabled = True
-        cboestado.Enabled = True
-        cbotipousuario.Enabled = True
+        Guna2tbUser.Enabled = True
+        Guna2tbName.Enabled = True
+        Guna2tbPassword.Enabled = True
+        Guna2cbState.Enabled = True
+        Guna2cbType.Enabled = True
 
         BtnNuevo.Enabled = False
     End Sub
     Sub limpiarcontroles()
-        txtNombrecompleto.Text = ""
-        txtcontraseña.Text = ""
-        txtUsuario.Text = ""
-        cboestado.Text = ""
-        cbotipousuario.Text = ""
+        Guna2tbName.Text = ""
+        Guna2tbPassword.Text = ""
+        Guna2tbUser.Text = ""
+        Guna2cbState.Text = ""
+        Guna2cbType.Text = ""
         TxtId.Text = ""
         TxtBuscar.Text = ""
 
@@ -73,7 +73,7 @@ Public Class frmUsuarios
             Dim tabla As New DataTable
             adaptador = New SqlDataAdapter(sql, obtenerconexion)
             adaptador.Fill(tabla)
-            DgbUsuarios.DataSource = tabla
+            Guna2dtgUsuario.DataSource = tabla
             LblTotal.Text = tabla.Rows.Count
 
         Catch ex As Exception
@@ -86,7 +86,7 @@ Public Class frmUsuarios
             MsgBox("Existen datos vacios", vbInformation, "Sistema de inventario")
         Else
             Dim sql As String
-            sql = "UPDATE Usuarios SET NombreCompleto ='" & txtNombrecompleto.Text & "',Usuario= '" & txtUsuario.Text & "',Password='" & txtcontraseña.Text & "',TipoUsuario ='" & cbotipousuario.Text & "',Estado='" & cboestado.Text & "' WHERE IdUsuarios= '" & TxtId.Text & "'"
+            sql = "UPDATE Usuarios SET NombreCompleto ='" & Guna2tbName.Text & "',Usuario= '" & Guna2tbUser.Text & "',Password='" & Guna2tbPassword.Text & "',TipoUsuario ='" & Guna2cbType.Text & "',Estado='" & Guna2cbState.Text & "' WHERE IdUsuarios= '" & TxtId.Text & "'"
             Dim conect As New SqlConnection(obtenerconexion)
             conect.Open()
             Using comando As New SqlCommand(sql, conect)
@@ -103,7 +103,7 @@ Public Class frmUsuarios
         If TxtId.Text = 0 Then
             MsgBox("Existen datos vacios", vbInformation, "Sistema de inventario")
         Else
-            If MsgBox("¿seguro de eliminar a" + Trim(txtNombrecompleto.Text) + "De su registro?" + vbCr + "Esta accion ya no se puede revertir.", vbQuestion + vbYesNo, "Sistema de inventario") = vbNo Then
+            If MsgBox("¿seguro de eliminar a" + Trim(Guna2tbName.Text) + "De su registro?" + vbCr + "Esta accion ya no se puede revertir.", vbQuestion + vbYesNo, "Sistema de inventario") = vbNo Then
                 limpiarcontroles()
                 desactivarcontroles()
                 Exit Sub
@@ -130,20 +130,20 @@ Public Class frmUsuarios
             Exit Sub
 
         End If
-        adaptador = New SqlDataAdapter("SELECT * FROM Usuarios Where Usuario = '" & txtUsuario.Text & "' ", obtenerconexion)
+        adaptador = New SqlDataAdapter("SELECT * FROM Usuarios Where Usuario = '" & Guna2tbUser.Text & "' ", obtenerconexion)
         tabla.Clear() 'borra datos que trae datatable
         adaptador.Fill(tabla) 'actualiza o agrega dataset
         If tabla.Rows.Count > 0 Then
-            txtUsuario.Text = tabla.Rows(0).Item("Usuario")
+            Guna2tbUser.Text = tabla.Rows(0).Item("Usuario")
             MsgBox("El registro ya se encuentra en la base de datos ", vbInformation, "Sistema inventario")
             Exit Sub
 
         End If
-        If txtNombrecompleto.Text = "" Or txtUsuario.Text = "" Or txtcontraseña.Text = "" Or cboestado.Text = "" Or cbotipousuario.Text = "" Then
+        If Guna2tbName.Text = "" Or Guna2tbUser.Text = "" Or Guna2tbPassword.Text = "" Or Guna2cbState.Text = "" Or Guna2cbType.Text = "" Then
             MsgBox("Completar todos los campos", vbCritical, "Sistema inventario")
             Exit Sub
         Else
-            sql = "INSERT INTO Usuarios(NombreCompleto,Usuario,Password,TipoUsuario,Estado)VALUES ('" & txtNombrecompleto.Text & "','" & txtUsuario.Text & "','" & txtcontraseña.Text & "','" & cbotipousuario.Text & "','" & cboestado.Text & "') " ' consulta de insercion
+            sql = "INSERT INTO Usuarios(NombreCompleto,Usuario,Password,TipoUsuario,Estado)VALUES ('" & Guna2tbName.Text & "','" & Guna2tbUser.Text & "','" & Guna2tbPassword.Text & "','" & Guna2cbType.Text & "','" & Guna2cbState.Text & "') " ' consulta de insercion
             Dim conect As New SqlConnection(obtenerconexion)
             conect.Open()
             Using comando As New SqlCommand(sql, conect)
@@ -154,11 +154,11 @@ Public Class frmUsuarios
         End If
 
     End Sub
-    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click, Guna2btnNew.Click
         activarcontroles()
     End Sub
 
-    Private Sub DgbUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgbUsuarios.CellContentClick
+    Private Sub DgbUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgbUsuarios.CellContentClick, Guna2dtgUsuario.CellContentClick
 
     End Sub
 
@@ -171,32 +171,32 @@ Public Class frmUsuarios
         tabla.Clear()
         adaptador.Fill(tabla)
         If tabla.Rows.Count > 0 Then
-            DgbUsuarios.DataSource = tabla
+            Guna2dtgUsuario.DataSource = tabla
             LblTotal.Text = tabla.Rows.Count
         Else
-            DgbUsuarios.DataSource = ""
+            Guna2dtgUsuario.DataSource = ""
         End If
 
     End Sub
 
-    Private Sub DgbUsuarios_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgbUsuarios.CellDoubleClick
+    Private Sub DgbUsuarios_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgbUsuarios.CellDoubleClick, Guna2dtgUsuario.CellDoubleClick
         On Error Resume Next 'cuando se produce un error en tiempo de ejecucion esta instruccion se transfiere y no se interrumpe la ejecucion
-        TxtId.Text = CStr(DgbUsuarios.Item("IdUsuarios", DgbUsuarios.CurrentCell.RowIndex).Value)
-        txtNombrecompleto.Text = CStr(DgbUsuarios.Item("NombreCompleto", DgbUsuarios.CurrentCell.RowIndex).Value)
-        txtUsuario.Text = CStr(DgbUsuarios.Item("Usuario", DgbUsuarios.CurrentCell.RowIndex).Value)
-        txtcontraseña.Text = CStr(DgbUsuarios.Item("Password", DgbUsuarios.CurrentCell.RowIndex).Value)
-        cbotipousuario.Text = CStr(DgbUsuarios.Item("TipoUsuario", DgbUsuarios.CurrentCell.RowIndex).Value)
-        cboestado.Text = CStr(DgbUsuarios.Item("Estado", DgbUsuarios.CurrentCell.RowIndex).Value)
+        TxtId.Text = CStr(Guna2dtgUsuario.Item("IdUsuarios", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
+        Guna2tbName.Text = CStr(Guna2dtgUsuario.Item("NombreCompleto", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
+        Guna2tbUser.Text = CStr(Guna2dtgUsuario.Item("Usuario", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
+        Guna2tbPassword.Text = CStr(Guna2dtgUsuario.Item("Password", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
+        Guna2cbType.Text = CStr(Guna2dtgUsuario.Item("TipoUsuario", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
+        Guna2cbState.Text = CStr(Guna2dtgUsuario.Item("Estado", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
         BtnCancelar.Enabled = True
-        BtnEditar.Enabled = True
-        BtnBorrar.Enabled = True
+        Guna2btnEdit.Enabled = True
+        Guna2btnDelete.Enabled = True
 
-        txtUsuario.Enabled = True
-        txtNombrecompleto.Enabled = True
-        txtcontraseña.Enabled = True
-        cboestado.Enabled = True
-        cbotipousuario.Enabled = True
-        txtNombrecompleto.Focus()
+        Guna2tbUser.Enabled = True
+        Guna2tbName.Enabled = True
+        Guna2tbPassword.Enabled = True
+        Guna2cbState.Enabled = True
+        Guna2cbType.Enabled = True
+        Guna2tbName.Focus()
 
         BtnNuevo.Enabled = False
 
