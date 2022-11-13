@@ -41,7 +41,7 @@ Public Class frmPrincipal
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         On Error Resume Next
         Dim salir As String
-        salir = MsgBox("desea salir del sistema?", vbYesNo, "salir")
+        salir = MsgBox("¿Desea salir del sistema?", vbYesNo, "Salir")
         If salir = vbYes Then
             Global.System.Windows.Forms.Application.Exit()
         Else
@@ -117,5 +117,9 @@ Public Class frmPrincipal
     Private Sub REGISTRODEACTIVOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REGISTRODEACTIVOSToolStripMenuItem.Click
         Dim frmcarticulos As New FrmArticulos
         frmcarticulos.Show()
+    End Sub
+
+    Private Sub ToolStripStatusLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripStatusLabel2.Click
+
     End Sub
 End Class

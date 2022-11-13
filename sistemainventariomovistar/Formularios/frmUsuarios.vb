@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Runtime.CompilerServices
+
 Public Class frmUsuarios
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles lblEstado.Click
 
@@ -212,5 +214,9 @@ Public Class frmUsuarios
         desactivarcontroles()
         Llenardatos()
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 End Class

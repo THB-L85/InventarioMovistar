@@ -136,6 +136,7 @@ Partial Class FrmConfiguracion
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FrmConfiguracion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Configuracion del servidor"
         Me.ResumeLayout(False)
         Me.PerformLayout()

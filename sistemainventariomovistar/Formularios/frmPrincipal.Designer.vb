@@ -43,6 +43,9 @@ Partial Class frmPrincipal
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ACTIVOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ENTREGAACTIVOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REGISTRODEACTIVOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -59,9 +62,6 @@ Partial Class frmPrincipal
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ACTIVOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ENTREGAACTIVOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REGISTRODEACTIVOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -88,8 +88,8 @@ Partial Class frmPrincipal
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
-        Me.ExitToolStripMenuItem.Text = "&Salir"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Text = "Salir"
         '
         'ModulosToolStripMenuItem
         '
@@ -194,6 +194,25 @@ Partial Class frmPrincipal
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.AboutToolStripMenuItem.Text = "&Acerca de..."
+        '
+        'ACTIVOSToolStripMenuItem
+        '
+        Me.ACTIVOSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ENTREGAACTIVOSToolStripMenuItem, Me.REGISTRODEACTIVOSToolStripMenuItem})
+        Me.ACTIVOSToolStripMenuItem.Name = "ACTIVOSToolStripMenuItem"
+        Me.ACTIVOSToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.ACTIVOSToolStripMenuItem.Text = "ACTIVOS"
+        '
+        'ENTREGAACTIVOSToolStripMenuItem
+        '
+        Me.ENTREGAACTIVOSToolStripMenuItem.Name = "ENTREGAACTIVOSToolStripMenuItem"
+        Me.ENTREGAACTIVOSToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.ENTREGAACTIVOSToolStripMenuItem.Text = "ENTREGA ACTIVOS"
+        '
+        'REGISTRODEACTIVOSToolStripMenuItem
+        '
+        Me.REGISTRODEACTIVOSToolStripMenuItem.Name = "REGISTRODEACTIVOSToolStripMenuItem"
+        Me.REGISTRODEACTIVOSToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.REGISTRODEACTIVOSToolStripMenuItem.Text = "REGISTRO DE ACTIVOS"
         '
         'ToolStrip
         '
@@ -306,25 +325,6 @@ Partial Class frmPrincipal
         Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(119, 17)
         Me.ToolStripStatusLabel4.Text = "ToolStripStatusLabel4"
         '
-        'ACTIVOSToolStripMenuItem
-        '
-        Me.ACTIVOSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ENTREGAACTIVOSToolStripMenuItem, Me.REGISTRODEACTIVOSToolStripMenuItem})
-        Me.ACTIVOSToolStripMenuItem.Name = "ACTIVOSToolStripMenuItem"
-        Me.ACTIVOSToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
-        Me.ACTIVOSToolStripMenuItem.Text = "ACTIVOS"
-        '
-        'ENTREGAACTIVOSToolStripMenuItem
-        '
-        Me.ENTREGAACTIVOSToolStripMenuItem.Name = "ENTREGAACTIVOSToolStripMenuItem"
-        Me.ENTREGAACTIVOSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ENTREGAACTIVOSToolStripMenuItem.Text = "ENTREGA ACTIVOS"
-        '
-        'REGISTRODEACTIVOSToolStripMenuItem
-        '
-        Me.REGISTRODEACTIVOSToolStripMenuItem.Name = "REGISTRODEACTIVOSToolStripMenuItem"
-        Me.REGISTRODEACTIVOSToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.REGISTRODEACTIVOSToolStripMenuItem.Text = "REGISTRO DE ACTIVOS"
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,6 +336,7 @@ Partial Class frmPrincipal
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frmPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sistema de control Movistar"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmUsuarios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.lblusuario = New System.Windows.Forms.Label()
@@ -50,6 +50,7 @@ Partial Class frmUsuarios
         Me.TIPOUSUARIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TxtId = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DgbUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -190,9 +191,9 @@ Partial Class frmUsuarios
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.TxtBuscar)
         Me.Panel1.Controls.Add(Me.DgbUsuarios)
-        Me.Panel1.Location = New System.Drawing.Point(467, 12)
+        Me.Panel1.Location = New System.Drawing.Point(48, 297)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(460, 235)
+        Me.Panel1.Size = New System.Drawing.Size(616, 278)
         Me.Panel1.TabIndex = 16
         '
         'LblTotal
@@ -240,7 +241,7 @@ Partial Class frmUsuarios
         Me.DgbUsuarios.ReadOnly = True
         Me.DgbUsuarios.RowHeadersVisible = False
         Me.DgbUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgbUsuarios.Size = New System.Drawing.Size(440, 121)
+        Me.DgbUsuarios.Size = New System.Drawing.Size(581, 121)
         Me.DgbUsuarios.TabIndex = 0
         '
         'IdUsuarios
@@ -296,11 +297,21 @@ Partial Class frmUsuarios
         Me.TxtId.TabIndex = 17
         Me.TxtId.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(532, 43)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(159, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(939, 270)
+        Me.ClientSize = New System.Drawing.Size(712, 615)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TxtId)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BtnCancelar)
@@ -359,4 +370,5 @@ Partial Class frmUsuarios
     Friend WithEvents Password As DataGridViewTextBoxColumn
     Friend WithEvents TIPOUSUARIO As DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class

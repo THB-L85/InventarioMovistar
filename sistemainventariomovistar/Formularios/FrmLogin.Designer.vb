@@ -24,6 +24,7 @@ Partial Class FrmLogin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -32,6 +33,7 @@ Partial Class FrmLogin
         Me.Guna2BtnCancel = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Guna2tbPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2tbUser = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -157,6 +159,11 @@ Partial Class FrmLogin
         Me.Guna2tbUser.Size = New System.Drawing.Size(270, 50)
         Me.Guna2tbUser.TabIndex = 13
         '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 20
+        Me.Guna2Elipse1.TargetControl = Me
+        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -188,4 +195,5 @@ Partial Class FrmLogin
     Friend WithEvents Guna2BtnCancel As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents Guna2tbPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2tbUser As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
 End Class
