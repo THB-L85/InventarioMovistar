@@ -12,16 +12,16 @@ Public Class FrmCargoActivos
         Btncodigo.Enabled = False
         BtnCurp.Enabled = False
 
-        txtNombreArt.Enabled = False
-        TxtCodigo.Enabled = False
+        Guna2TxtNombreArt.Enabled = False
+        Guna2TxtCodigo.Enabled = False
         TxtNserie.Enabled = False
         TxtCodigoInv.Enabled = False
-        TxtDescripcion.Enabled = False
-        TxtCurp.Enabled = False
-        TxtDepartamento.Enabled = False
-        TxtNombreE.Enabled = False
+        Guna2TxtDescripcion.Enabled = False
+        Guna2TxtCurp.Enabled = False
+        Guna2TxtDepartamento.Enabled = False
+        Guna2TxtNombreE.Enabled = False
         CboEstado.Enabled = False
-        DTPFechaEntrega.Enabled = False
+        Guna2DTPFechaEntrega.Enabled = False
         BtnNuevo.Enabled = True
     End Sub
     Sub activarcontroles()
@@ -32,31 +32,31 @@ Public Class FrmCargoActivos
         Btncodigo.Enabled = True
         BtnCurp.Enabled = True
 
-        txtNombreArt.Enabled = True
-        TxtCodigo.Enabled = True
+        Guna2TxtNombreArt.Enabled = True
+        Guna2TxtCodigo.Enabled = True
         TxtNserie.Enabled = True
         TxtCodigoInv.Enabled = True
-        TxtDescripcion.Enabled = True
-        TxtCurp.Enabled = True
-        TxtDepartamento.Enabled = True
-        TxtNombreE.Enabled = True
+        Guna2TxtDescripcion.Enabled = True
+        Guna2TxtCurp.Enabled = True
+        Guna2TxtDepartamento.Enabled = True
+        Guna2TxtNombreE.Enabled = True
         CboEstado.Enabled = True
-        DTPFechaEntrega.Enabled = True
+        Guna2DTPFechaEntrega.Enabled = True
 
 
         BtnNuevo.Enabled = False
     End Sub
     Sub limpiarcontroles()
-        txtNombreArt.Clear()
-        TxtCodigo.Clear()
+        Guna2TxtNombreArt.Clear()
+        Guna2TxtCodigo.Clear()
         TxtNserie.Clear()
         TxtCodigoInv.Clear()
-        TxtDescripcion.Clear()
-        TxtCurp.Clear()
-        TxtDepartamento.Clear()
-        TxtNombreE.Clear()
+        Guna2TxtDescripcion.Clear()
+        Guna2TxtCurp.Clear()
+        Guna2TxtDepartamento.Clear()
+        Guna2TxtNombreE.Clear()
         CboEstado.Text = ""
-        DTPFechaEntrega.Text = ""
+        Guna2DTPFechaEntrega.Text = ""
     End Sub
     Private Function obtenercodigos() As AutoCompleteStringCollection
         adaptador = New SqlDataAdapter("SELECT CodigoA FROM Articulo WHERE EstadoArticulo='PENDIENTE'", obtenerconexion)
@@ -94,12 +94,12 @@ Public Class FrmCargoActivos
             Exit Sub
 
         End If
-        If TxtIdArticulo.Text = "" Or TxtIdEmpleado.Text = "" Or TxtCodigoInv.Text = "" Or DTPFechaEntrega.Text = "" Then
+        If TxtIdArticulo.Text = "" Or TxtIdEmpleado.Text = "" Or TxtCodigoInv.Text = "" Or Guna2DTPFechaEntrega.Text = "" Then
             MsgBox("Completar todos los campos", vbCritical, "Sistema inventario")
             Exit Sub
         Else
             sql = "INSERT INTO CargoActivos(CodigoInventario,fechaAsignacion,EstadoArticulo,Descripcion,IdArticulo,IdEmpleado) VALUES
-           ('" & TxtCodigoInv.Text & "','" & DTPFechaEntrega.Text & "','" & CboEstado.Text & "','" & TxtDescripcion.Text & "',
+           ('" & TxtCodigoInv.Text & "','" & Guna2DTPFechaEntrega.Text & "','" & CboEstado.Text & "','" & Guna2TxtDescripcion.Text & "',
            '" & TxtIdArticulo.Text & "','" & TxtIdEmpleado.Text & "')"
 
             Dim conect As New SqlConnection(obtenerconexion)
@@ -146,8 +146,8 @@ Public Class FrmCargoActivos
         Else
             Dim sql As String
             sql = "UPDATE CargoActivos SET CodigoInventario ='" & TxtCodigoInv.Text & "',
-            fechaAsignacion= '" & DTPFechaEntrega.Text & "', EstadoArticulo='" & CboEstado.Text & "', 
-            Descripcion ='" & TxtDescripcion.Text & "',IdArticulo ='" & TxtIdArticulo.Text & "', 
+            fechaAsignacion= '" & Guna2DTPFechaEntrega.Text & "', EstadoArticulo='" & CboEstado.Text & "', 
+            Descripcion ='" & Guna2TxtDescripcion.Text & "',IdArticulo ='" & TxtIdArticulo.Text & "', 
             IdEmpleado ='" & TxtIdEmpleado.Text & "' WHERE IdCargo= '" & TxtId.Text & "'"
             Dim conect As New SqlConnection(obtenerconexion)
             conect.Open()
@@ -254,7 +254,7 @@ Public Class FrmCargoActivos
         If TxtId.Text = 0 Then
             MsgBox("Existen datos vacios", vbInformation, "Sistema de inventario")
         Else
-            If MsgBox("¿seguro de eliminar al activo" + Trim(txtNombreArt.Text) + "De su registro?" + vbCr + "Esta accion ya no se puede revertir.", vbQuestion + vbYesNo, "Sistema de inventario") = vbNo Then
+            If MsgBox("¿seguro de eliminar al activo" + Trim(Guna2TxtNombreArt.Text) + "De su registro?" + vbCr + "Esta accion ya no se puede revertir.", vbQuestion + vbYesNo, "Sistema de inventario") = vbNo Then
                 limpiarcontroles()
                 desactivarcontroles()
                 Exit Sub
@@ -285,9 +285,9 @@ Public Class FrmCargoActivos
         TxtCodigo.AutoCompleteSource = AutoCompleteSource.CustomSource
         TxtCodigo.AutoCompleteCustomSource = obtenercodigos()
 
-        TxtCurp.AutoCompleteMode = AutoCompleteMode.Suggest
-        TxtCurp.AutoCompleteSource = AutoCompleteSource.CustomSource
-        TxtCurp.AutoCompleteCustomSource = obtenerIdentidades()
+        Guna2TxtCurp.AutoCompleteMode = AutoCompleteMode.Suggest
+        Guna2TxtCurp.AutoCompleteSource = AutoCompleteSource.CustomSource
+        Guna2TxtCurp.AutoCompleteCustomSource = obtenerIdentidades()
 
         DgbCargoActivos.AutoGenerateColumns = False
 
@@ -324,20 +324,20 @@ Public Class FrmCargoActivos
         limpiarcontroles()
     End Sub
 
-    Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigo.TextChanged
-        If TxtCodigo.Text <> "" Then
+    Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigo.TextChanged, Guna2TxtCodigo.TextChanged
+        If Guna2TxtCodigo.Text <> "" Then
             adaptador = New SqlDataAdapter("SELECT IdArticulo,NombreA,NumeroSerie FROM Articulo WHERE CodigoA='" & TxtCodigo.Text & "'", obtenerconexion)
             Dim tabla As New DataTable
             tabla.Clear()
             adaptador.Fill(tabla)
             If tabla.Rows.Count = 1 Then
                 Dim fila As DataRow = tabla.Rows(0)
-                txtNombreArt.Text = fila("NombreA").ToString
+                Guna2TxtNombreArt.Text = fila("NombreA").ToString
                 TxtNserie.Text = fila("NumeroSerie").ToString
                 TxtIdArticulo.Text = fila("idArticulo").ToString
             Else
-                txtNombreArt.Clear()
-                TxtCodigo.Focus()
+                Guna2TxtNombreArt.Clear()
+                Guna2TxtCodigo.Focus()
             End If
         End If
     End Sub
@@ -346,7 +346,7 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub TxtCurp_TextChanged(sender As Object, e As EventArgs) Handles TxtCurp.TextChanged
+    Private Sub TxtCurp_TextChanged(sender As Object, e As EventArgs) Handles TxtCurp.TextChanged, Guna2TxtCurp.TextChanged
         If TxtCodigo.Text <> "" Then
             adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado,Empleados.Nombre,Departamentos.NombreD FROM Departamentos INNER JOIN Empleados ON departamentos.IdDepartamento = Empleados.IdDepartamento WHERE Curp='" & TxtCurp.Text & "'", obtenerconexion)
             Dim tabla As New DataTable
@@ -354,13 +354,13 @@ Public Class FrmCargoActivos
             adaptador.Fill(tabla)
             If tabla.Rows.Count = 1 Then
                 Dim fila As DataRow = tabla.Rows(0)
-                TxtNombreE.Text = fila("Nombre").ToString
-                TxtDepartamento.Text = fila("NombreD").ToString
+                Guna2TxtNombreE.Text = fila("Nombre").ToString
+                Guna2TxtDepartamento.Text = fila("NombreD").ToString
                 TxtIdEmpleado.Text = fila("idEmpleado").ToString
             Else
-                TxtDepartamento.Clear()
-                TxtNombreE.Clear()
-                TxtCurp.Focus()
+                Guna2TxtDepartamento.Clear()
+                Guna2TxtNombreE.Clear()
+                Guna2TxtCurp.Focus()
             End If
         End If
     End Sub
@@ -401,39 +401,39 @@ Public Class FrmCargoActivos
         On Error Resume Next
 
         TxtIdArticulo.Text = CStr(DgbCargoActivos.Item("IdArticulo", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        txtNombreArt.Text = CStr(DgbCargoActivos.Item("NombreA", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        TxtCodigo.Text = CStr(DgbCargoActivos.Item("CodigoA", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2TxtNombreArt.Text = CStr(DgbCargoActivos.Item("NombreA", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2TxtCodigo.Text = CStr(DgbCargoActivos.Item("CodigoA", DgbCargoActivos.CurrentCell.RowIndex).Value)
         TxtNserie.Text = CStr(DgbCargoActivos.Item("NumeroSerie", DgbCargoActivos.CurrentCell.RowIndex).Value)
 
         TxtIdEmpleado.Text = CStr(DgbCargoActivos.Item("IdEmpleado", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        TxtCurp.Text = CStr(DgbCargoActivos.Item("Curp", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        TxtNombreE.Text = CStr(DgbCargoActivos.Item("Nombre", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        TxtDepartamento.Text = CStr(DgbCargoActivos.Item("NombreD", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2TxtCurp.Text = CStr(DgbCargoActivos.Item("Curp", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2TxtNombreE.Text = CStr(DgbCargoActivos.Item("Nombre", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2TxtDepartamento.Text = CStr(DgbCargoActivos.Item("NombreD", DgbCargoActivos.CurrentCell.RowIndex).Value)
 
 
         TxtId.Text = CStr(DgbCargoActivos.Item("IdCargo", DgbCargoActivos.CurrentCell.RowIndex).Value)
         TxtCodigoInv.Text = CStr(DgbCargoActivos.Item("CodigoInventario", DgbCargoActivos.CurrentCell.RowIndex).Value)
         CboEstado.Text = CStr(DgbCargoActivos.Item("EstadoArticulo", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        TxtDescripcion.Text = CStr(DgbCargoActivos.Item("Descripcion", DgbCargoActivos.CurrentCell.RowIndex).Value)
-        DTPFechaEntrega.Text = CStr(DgbCargoActivos.Item("FechaAsignacion", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2TxtDescripcion.Text = CStr(DgbCargoActivos.Item("Descripcion", DgbCargoActivos.CurrentCell.RowIndex).Value)
+        Guna2DTPFechaEntrega.Text = CStr(DgbCargoActivos.Item("FechaAsignacion", DgbCargoActivos.CurrentCell.RowIndex).Value)
         BtnCancelar.Enabled = True
         Btncodigo.Enabled = True
         BtnCurp.Enabled = True
         BtnEditar.Enabled = True
         BtnBorrar.Enabled = True
 
-        txtNombreArt.Enabled = True
+        Guna2TxtNombreArt.Enabled = True
         TxtIdArticulo.Enabled = True
         TxtNserie.Enabled = True
-        TxtCodigo.Enabled = True
+        Guna2TxtCodigo.Enabled = True
 
-        TxtNombreE.Enabled = True
-        TxtCurp.Enabled = True
-        TxtNombreE.Enabled = True
-        TxtDepartamento.Enabled = True
+        Guna2TxtNombreE.Enabled = True
+        Guna2TxtCurp.Enabled = True
+        Guna2TxtNombreE.Enabled = True
+        Guna2TxtDepartamento.Enabled = True
 
-        TxtDescripcion.Enabled = True
-        DTPFechaEntrega.Enabled = True
+        Guna2TxtDescripcion.Enabled = True
+        Guna2DTPFechaEntrega.Enabled = True
         CboEstado.Enabled = True
         TxtCodigoInv.Enabled = True
         'TxtCodigo.Focus()
