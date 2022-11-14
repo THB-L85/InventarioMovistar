@@ -17,7 +17,7 @@ Public Class frmUsuarios
 
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, Guna2btnCancel.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles Guna2btnCancel.Click
         desactivarcontroles()
         limpiarcontroles()
     End Sub
@@ -31,7 +31,7 @@ Public Class frmUsuarios
     Sub desactivarcontroles()
         Guna2btnSave.Enabled = False
         Guna2btnEdit.Enabled = False
-        BtnCancelar.Enabled = False
+        Guna2btnCancel.Enabled = False
         Guna2btnDelete.Enabled = False
 
         Guna2tbUser.Enabled = False
@@ -40,12 +40,12 @@ Public Class frmUsuarios
         Guna2cbState.Enabled = False
         Guna2cbType.Enabled = False
 
-        BtnNuevo.Enabled = True
+        Guna2btnNew.Enabled = True
     End Sub
     Sub activarcontroles()
         Guna2btnSave.Enabled = True
         Guna2btnEdit.Enabled = False
-        BtnCancelar.Enabled = True
+        Guna2btnCancel.Enabled = True
         Guna2btnDelete.Enabled = False
 
         Guna2tbUser.Enabled = True
@@ -54,7 +54,7 @@ Public Class frmUsuarios
         Guna2cbState.Enabled = True
         Guna2cbType.Enabled = True
 
-        BtnNuevo.Enabled = False
+        Guna2btnNew.Enabled = False
     End Sub
     Sub limpiarcontroles()
         Guna2tbName.Text = ""
@@ -63,7 +63,7 @@ Public Class frmUsuarios
         Guna2cbState.Text = ""
         Guna2cbType.Text = ""
         TxtId.Text = ""
-        TxtBuscar.Text = ""
+        Guna2txtSearch.Text = ""
 
     End Sub
     Sub Llenardatos()
@@ -154,7 +154,7 @@ Public Class frmUsuarios
         End If
 
     End Sub
-    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click, Guna2btnNew.Click
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles Guna2btnNew.Click
         activarcontroles()
     End Sub
 
@@ -162,12 +162,12 @@ Public Class frmUsuarios
 
     End Sub
 
-    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
-        If TxtBuscar.Text = " " Then
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles Guna2txtSearch.TextChanged
+        If Guna2txtSearch.Text = " " Then
             Llenardatos()
 
         End If
-        adaptador = New SqlDataAdapter("SELECT * FROM Usuarios WHERE NombreCompleto LIKE '%" & TxtBuscar.Text & "%'", obtenerconexion)
+        adaptador = New SqlDataAdapter("SELECT * FROM Usuarios WHERE NombreCompleto LIKE '%" & Guna2txtSearch.Text & "%'", obtenerconexion)
         tabla.Clear()
         adaptador.Fill(tabla)
         If tabla.Rows.Count > 0 Then
@@ -187,7 +187,7 @@ Public Class frmUsuarios
         Guna2tbPassword.Text = CStr(Guna2dtgUsuario.Item("Password", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
         Guna2cbType.Text = CStr(Guna2dtgUsuario.Item("TipoUsuario", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
         Guna2cbState.Text = CStr(Guna2dtgUsuario.Item("Estado", Guna2dtgUsuario.CurrentCell.RowIndex).Value)
-        BtnCancelar.Enabled = True
+        Guna2btnCancel.Enabled = True
         Guna2btnEdit.Enabled = True
         Guna2btnDelete.Enabled = True
 
@@ -198,25 +198,25 @@ Public Class frmUsuarios
         Guna2cbType.Enabled = True
         Guna2tbName.Focus()
 
-        BtnNuevo.Enabled = False
+        Guna2btnNew.Enabled = False
 
     End Sub
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles Guna2btnEdit.Click
         Editar()
         desactivarcontroles()
         Llenardatos()
 
     End Sub
 
-    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
+    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles Guna2btnDelete.Click
         Eliminar()
         desactivarcontroles()
         Llenardatos()
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Guna2btnExit.Click
         Me.Close()
     End Sub
 End Class

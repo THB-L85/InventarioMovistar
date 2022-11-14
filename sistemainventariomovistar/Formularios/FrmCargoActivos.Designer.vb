@@ -537,6 +537,7 @@ Partial Class FrmCargoActivos
         Me.Controls.Add(Me.lbcurp)
         Me.Controls.Add(Me.lblnombre)
         Me.Name = "FrmCargoActivos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cargo de Activos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
