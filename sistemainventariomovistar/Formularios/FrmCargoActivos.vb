@@ -364,7 +364,7 @@ Public Class FrmCargoActivos
             End If
         End If
     End Sub
-    Private Sub Btncodigo_Click(sender As Object, e As EventArgs) Handles Btncodigo.Click
+    Private Sub Btncodigo_Click(sender As Object, e As EventArgs) Handles Btncodigo.Click, Guna2Btncodigo.Click
         Dim frmbusquedaarticulos As New FrmBuscarArticulos
         frmbusquedaarticulos.ShowDialog()
 
@@ -372,7 +372,7 @@ Public Class FrmCargoActivos
     End Sub
     Dim FrmBusquedaEmpleado As New FrmBusquedaEmpleado
 
-    Private Sub BtnCurp_Click(sender As Object, e As EventArgs) Handles BtnCurp.Click
+    Private Sub BtnCurp_Click(sender As Object, e As EventArgs) Handles BtnCurp.Click, Guna2BtnCurp.Click
 
         FrmBusquedaEmpleado.ShowDialog()
     End Sub
