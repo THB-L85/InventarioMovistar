@@ -79,8 +79,8 @@ Partial Class FrmCargoActivos
         Me.Guna2DTPFechaEntrega = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Guna2TxtNSerie = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2TxtCodigoInv = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2CboEstado = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.DgbCargoActivos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -728,50 +728,50 @@ Partial Class FrmCargoActivos
         Me.Guna2TxtNSerie.Size = New System.Drawing.Size(225, 36)
         Me.Guna2TxtNSerie.TabIndex = 124
         '
-        'Guna2TextBox1
+        'Guna2TxtCodigoInv
         '
-        Me.Guna2TextBox1.Animated = True
-        Me.Guna2TextBox1.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.BorderRadius = 7
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FillColor = System.Drawing.SystemColors.Control
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Franklin Gothic Book", 12.0!)
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(537, 121)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray
-        Me.Guna2TextBox1.PlaceholderText = "Código Inventario"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(225, 36)
-        Me.Guna2TextBox1.TabIndex = 125
+        Me.Guna2TxtCodigoInv.Animated = True
+        Me.Guna2TxtCodigoInv.BorderColor = System.Drawing.Color.Black
+        Me.Guna2TxtCodigoInv.BorderRadius = 7
+        Me.Guna2TxtCodigoInv.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TxtCodigoInv.DefaultText = ""
+        Me.Guna2TxtCodigoInv.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TxtCodigoInv.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TxtCodigoInv.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TxtCodigoInv.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TxtCodigoInv.FillColor = System.Drawing.SystemColors.Control
+        Me.Guna2TxtCodigoInv.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TxtCodigoInv.Font = New System.Drawing.Font("Franklin Gothic Book", 12.0!)
+        Me.Guna2TxtCodigoInv.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TxtCodigoInv.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TxtCodigoInv.Location = New System.Drawing.Point(537, 121)
+        Me.Guna2TxtCodigoInv.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Guna2TxtCodigoInv.Name = "Guna2TxtCodigoInv"
+        Me.Guna2TxtCodigoInv.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TxtCodigoInv.PlaceholderForeColor = System.Drawing.Color.Gray
+        Me.Guna2TxtCodigoInv.PlaceholderText = "Código Inventario"
+        Me.Guna2TxtCodigoInv.SelectedText = ""
+        Me.Guna2TxtCodigoInv.Size = New System.Drawing.Size(225, 36)
+        Me.Guna2TxtCodigoInv.TabIndex = 125
         '
-        'Guna2ComboBox1
+        'Guna2CboEstado
         '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.BorderColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.BorderRadius = 7
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FillColor = System.Drawing.SystemColors.Control
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Items.AddRange(New Object() {"Nuevo", "Usado"})
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(628, 169)
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(134, 36)
-        Me.Guna2ComboBox1.TabIndex = 126
+        Me.Guna2CboEstado.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CboEstado.BorderColor = System.Drawing.Color.Black
+        Me.Guna2CboEstado.BorderRadius = 7
+        Me.Guna2CboEstado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Guna2CboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Guna2CboEstado.FillColor = System.Drawing.SystemColors.Control
+        Me.Guna2CboEstado.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CboEstado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CboEstado.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Guna2CboEstado.ForeColor = System.Drawing.Color.Black
+        Me.Guna2CboEstado.ItemHeight = 30
+        Me.Guna2CboEstado.Items.AddRange(New Object() {"Nuevo", "Usado"})
+        Me.Guna2CboEstado.Location = New System.Drawing.Point(628, 169)
+        Me.Guna2CboEstado.Name = "Guna2CboEstado"
+        Me.Guna2CboEstado.Size = New System.Drawing.Size(134, 36)
+        Me.Guna2CboEstado.TabIndex = 126
         '
         'Label8
         '
@@ -791,8 +791,8 @@ Partial Class FrmCargoActivos
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1098, 719)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Guna2ComboBox1)
-        Me.Controls.Add(Me.Guna2TextBox1)
+        Me.Controls.Add(Me.Guna2CboEstado)
+        Me.Controls.Add(Me.Guna2TxtCodigoInv)
         Me.Controls.Add(Me.Guna2TxtNSerie)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Guna2DTPFechaEntrega)
@@ -900,7 +900,7 @@ Partial Class FrmCargoActivos
     Friend WithEvents Label7 As Label
     Friend WithEvents Guna2DTPFechaEntrega As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Label8 As Label
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2CboEstado As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Guna2TxtCodigoInv As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2TxtNSerie As Guna.UI2.WinForms.Guna2TextBox
 End Class
