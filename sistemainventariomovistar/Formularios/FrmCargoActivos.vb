@@ -5,10 +5,10 @@ Public Class FrmCargoActivos
 
 
     Sub desactivarcontroles()
-        BtnGuardar.Enabled = False
-        BtnEditar.Enabled = False
+        Guna2BtnGuardar.Enabled = False
+        Guna2BntEditar.Enabled = False
         BtnCancelar.Enabled = False
-        BtnBorrar.Enabled = False
+        Guna2BtnBorrar.Enabled = False
         Guna2Btncodigo.Enabled = False
         Guna2BtnCurp.Enabled = False
 
@@ -25,10 +25,10 @@ Public Class FrmCargoActivos
         BtnNuevo.Enabled = True
     End Sub
     Sub activarcontroles()
-        BtnGuardar.Enabled = True
-        BtnEditar.Enabled = False
+        Guna2BtnGuardar.Enabled = True
+        Guna2BntEditar.Enabled = False
         BtnCancelar.Enabled = True
-        BtnBorrar.Enabled = False
+        Guna2BtnBorrar.Enabled = False
         Guna2Btncodigo.Enabled = True
         Guna2BtnCurp.Enabled = True
 
@@ -85,7 +85,7 @@ Public Class FrmCargoActivos
             Exit Sub
 
         End If
-        adaptador = New SqlDataAdapter("SELECT * FROM CargoActivos Where CodigoInventario = '" & TxtCodigoInv.Text & "' ", obtenerconexion)
+        adaptador = New SqlDataAdapter("SELECT * FROM CargoActivos Where CodigoInventario = '" & Guna2TxtCodigoInv.Text & "' ", obtenerconexion)
         tabla.Clear() 'borra datos que trae datatable
         adaptador.Fill(tabla) 'actualiza o agrega dataset
         If tabla.Rows.Count > 0 Then
@@ -281,9 +281,9 @@ Public Class FrmCargoActivos
         limpiarcontroles()
         Llenardatos()
 
-        TxtCodigo.AutoCompleteMode = AutoCompleteMode.Suggest
-        TxtCodigo.AutoCompleteSource = AutoCompleteSource.CustomSource
-        TxtCodigo.AutoCompleteCustomSource = obtenercodigos()
+        Guna2TxtCodigo.AutoCompleteMode = AutoCompleteMode.Suggest
+        Guna2TxtCodigo.AutoCompleteSource = AutoCompleteSource.CustomSource
+        Guna2TxtCodigo.AutoCompleteCustomSource = obtenercodigos()
 
         Guna2TxtCurp.AutoCompleteMode = AutoCompleteMode.Suggest
         Guna2TxtCurp.AutoCompleteSource = AutoCompleteSource.CustomSource
@@ -317,16 +317,16 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles Guna2BtnGuardar.Click
         insertar()
         Llenardatos()
         desactivarcontroles()
         limpiarcontroles()
     End Sub
 
-    Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigo.TextChanged, Guna2TxtCodigo.TextChanged
+    Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles Guna2TxtCodigo.TextChanged, TxtCodigo.TextChanged
         If Guna2TxtCodigo.Text <> "" Then
-            adaptador = New SqlDataAdapter("SELECT IdArticulo,NombreA,NumeroSerie FROM Articulo WHERE CodigoA='" & TxtCodigo.Text & "'", obtenerconexion)
+            adaptador = New SqlDataAdapter("SELECT IdArticulo,NombreA,NumeroSerie FROM Articulo WHERE CodigoA='" & Guna2TxtCodigo.Text & "'", obtenerconexion)
             Dim tabla As New DataTable
             tabla.Clear()
             adaptador.Fill(tabla)
@@ -346,9 +346,9 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub TxtCurp_TextChanged(sender As Object, e As EventArgs) Handles TxtCurp.TextChanged, Guna2TxtCurp.TextChanged
-        If TxtCodigo.Text <> "" Then
-            adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado,Empleados.Nombre,Departamentos.NombreD FROM Departamentos INNER JOIN Empleados ON departamentos.IdDepartamento = Empleados.IdDepartamento WHERE Curp='" & TxtCurp.Text & "'", obtenerconexion)
+    Private Sub TxtCurp_TextChanged(sender As Object, e As EventArgs) Handles Guna2TxtCurp.TextChanged, TxtCurp.TextChanged
+        If Guna2TxtCodigo.Text <> "" Then
+            adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado,Empleados.Nombre,Departamentos.NombreD FROM Departamentos INNER JOIN Empleados ON departamentos.IdDepartamento = Empleados.IdDepartamento WHERE Curp='" & Guna2TxtCurp.Text & "'", obtenerconexion)
             Dim tabla As New DataTable
             tabla.Clear()
             adaptador.Fill(tabla)
@@ -364,7 +364,7 @@ Public Class FrmCargoActivos
             End If
         End If
     End Sub
-    Private Sub Btncodigo_Click(sender As Object, e As EventArgs) Handles Btncodigo.Click, Guna2Btncodigo.Click
+    Private Sub Btncodigo_Click(sender As Object, e As EventArgs) Handles Guna2Btncodigo.Click, Btncodigo.Click
         Dim frmbusquedaarticulos As New FrmBuscarArticulos
         frmbusquedaarticulos.ShowDialog()
 
@@ -372,7 +372,7 @@ Public Class FrmCargoActivos
     End Sub
     Dim FrmBusquedaEmpleado As New FrmBusquedaEmpleado
 
-    Private Sub BtnCurp_Click(sender As Object, e As EventArgs) Handles BtnCurp.Click, Guna2BtnCurp.Click
+    Private Sub BtnCurp_Click(sender As Object, e As EventArgs) Handles Guna2BtnCurp.Click, BtnCurp.Click
 
         FrmBusquedaEmpleado.ShowDialog()
     End Sub
@@ -419,8 +419,8 @@ Public Class FrmCargoActivos
         BtnCancelar.Enabled = True
         Guna2Btncodigo.Enabled = True
         Guna2BtnCurp.Enabled = True
-        BtnEditar.Enabled = True
-        BtnBorrar.Enabled = True
+        Guna2BntEditar.Enabled = True
+        Guna2BtnBorrar.Enabled = True
 
         Guna2TxtNombreArt.Enabled = True
         TxtIdArticulo.Enabled = True
@@ -437,12 +437,12 @@ Public Class FrmCargoActivos
         Guna2CboEstado.Enabled = True
         Guna2TxtCodigoInv.Enabled = True
         'TxtCodigo.Focus()
-        BtnBuscar.Enabled = False
+        Guna2BtnBuscar.Enabled = False
         BtnNuevo.Enabled = False
 
     End Sub
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles Guna2BntEditar.Click
         If UCase(tipousuario) = "ADMINISTRADOR" Then
             Editar()
             desactivarcontroles()
@@ -455,7 +455,7 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
+    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles Guna2BtnBorrar.Click
         If UCase(tipousuario) = "ADMINISTRADOR" Then
             Eliminar()
 

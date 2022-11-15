@@ -23,9 +23,6 @@ Partial Class FrmCargoActivos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.DTPFechaEntrega = New System.Windows.Forms.DateTimePicker()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RbCodigoA = New System.Windows.Forms.RadioButton()
@@ -33,7 +30,6 @@ Partial Class FrmCargoActivos
         Me.rbNombreA = New System.Windows.Forms.RadioButton()
         Me.LblTotal = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.DgbCargoActivos = New System.Windows.Forms.DataGridView()
         Me.IdArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,26 +41,7 @@ Partial Class FrmCargoActivos
         Me.NumeroSerie = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnBorrar = New System.Windows.Forms.Button()
-        Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        Me.TxtCodigo = New System.Windows.Forms.TextBox()
-        Me.txtNombreArt = New System.Windows.Forms.TextBox()
-        Me.lblnombre = New System.Windows.Forms.Label()
-        Me.TxtNserie = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.CboEstado = New System.Windows.Forms.ComboBox()
-        Me.lblestado = New System.Windows.Forms.Label()
-        Me.TxtNombreE = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtCodigoInv = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtCurp = New System.Windows.Forms.TextBox()
-        Me.BtnCurp = New System.Windows.Forms.Button()
-        Me.Btncodigo = New System.Windows.Forms.Button()
-        Me.TxtDepartamento = New System.Windows.Forms.TextBox()
-        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.TxtIdArticulo = New System.Windows.Forms.TextBox()
         Me.TxtIdEmpleado = New System.Windows.Forms.TextBox()
         Me.Guna2TxtCodigo = New Guna.UI2.WinForms.Guna2TextBox()
@@ -82,35 +59,31 @@ Partial Class FrmCargoActivos
         Me.Guna2TxtCodigoInv = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2CboEstado = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Guna2BtnGuardar = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2BntEditar = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2BtnBorrar = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2BtnBuscar = New Guna.UI2.WinForms.Guna2Button()
+        Me.TxtCodigoInv = New System.Windows.Forms.TextBox()
+        Me.CboEstado = New System.Windows.Forms.ComboBox()
+        Me.TxtNserie = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblestado = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DTPFechaEntrega = New System.Windows.Forms.DateTimePicker()
+        Me.TxtNombreE = New System.Windows.Forms.TextBox()
+        Me.txtNombreArt = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblnombre = New System.Windows.Forms.Label()
+        Me.BtnCurp = New System.Windows.Forms.Button()
+        Me.Btncodigo = New System.Windows.Forms.Button()
+        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
+        Me.TxtDepartamento = New System.Windows.Forms.TextBox()
+        Me.TxtCurp = New System.Windows.Forms.TextBox()
+        Me.TxtCodigo = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DgbCargoActivos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DTPFechaEntrega
-        '
-        Me.DTPFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPFechaEntrega.Location = New System.Drawing.Point(424, 622)
-        Me.DTPFechaEntrega.Name = "DTPFechaEntrega"
-        Me.DTPFechaEntrega.Size = New System.Drawing.Size(247, 20)
-        Me.DTPFechaEntrega.TabIndex = 94
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(321, 626)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 13)
-        Me.Label4.TabIndex = 93
-        Me.Label4.Text = "Fecha de Compra"
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Location = New System.Drawing.Point(809, 182)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(73, 23)
-        Me.BtnBuscar.TabIndex = 90
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
         '
         'TxtId
         '
@@ -127,18 +100,17 @@ Partial Class FrmCargoActivos
         Me.Panel1.Controls.Add(Me.rbNombreA)
         Me.Panel1.Controls.Add(Me.LblTotal)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.TxtBuscar)
         Me.Panel1.Controls.Add(Me.DgbCargoActivos)
-        Me.Panel1.Location = New System.Drawing.Point(12, 288)
+        Me.Panel1.Location = New System.Drawing.Point(51, 287)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1084, 250)
+        Me.Panel1.Size = New System.Drawing.Size(926, 250)
         Me.Panel1.TabIndex = 84
         '
         'RbCodigoA
         '
         Me.RbCodigoA.AutoSize = True
-        Me.RbCodigoA.Location = New System.Drawing.Point(384, 44)
+        Me.RbCodigoA.Location = New System.Drawing.Point(385, 17)
         Me.RbCodigoA.Name = "RbCodigoA"
         Me.RbCodigoA.Size = New System.Drawing.Size(111, 17)
         Me.RbCodigoA.TabIndex = 22
@@ -148,7 +120,7 @@ Partial Class FrmCargoActivos
         'Rbfecha
         '
         Me.Rbfecha.AutoSize = True
-        Me.Rbfecha.Location = New System.Drawing.Point(243, 42)
+        Me.Rbfecha.Location = New System.Drawing.Point(244, 15)
         Me.Rbfecha.Name = "Rbfecha"
         Me.Rbfecha.Size = New System.Drawing.Size(55, 17)
         Me.Rbfecha.TabIndex = 21
@@ -159,7 +131,7 @@ Partial Class FrmCargoActivos
         '
         Me.rbNombreA.AutoSize = True
         Me.rbNombreA.Checked = True
-        Me.rbNombreA.Location = New System.Drawing.Point(17, 42)
+        Me.rbNombreA.Location = New System.Drawing.Point(18, 15)
         Me.rbNombreA.Name = "rbNombreA"
         Me.rbNombreA.Size = New System.Drawing.Size(127, 17)
         Me.rbNombreA.TabIndex = 20
@@ -170,7 +142,7 @@ Partial Class FrmCargoActivos
         'LblTotal
         '
         Me.LblTotal.AutoSize = True
-        Me.LblTotal.Location = New System.Drawing.Point(138, 225)
+        Me.LblTotal.Location = New System.Drawing.Point(131, 204)
         Me.LblTotal.Name = "LblTotal"
         Me.LblTotal.Size = New System.Drawing.Size(31, 13)
         Me.LblTotal.TabIndex = 19
@@ -179,26 +151,17 @@ Partial Class FrmCargoActivos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 225)
+        Me.Label2.Location = New System.Drawing.Point(7, 204)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 13)
         Me.Label2.TabIndex = 18
         Me.Label2.Text = "Empleados Registrados"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 17
-        Me.Label1.Text = "Buscar"
-        '
         'TxtBuscar
         '
-        Me.TxtBuscar.Location = New System.Drawing.Point(568, 41)
+        Me.TxtBuscar.Location = New System.Drawing.Point(569, 14)
         Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(516, 20)
+        Me.TxtBuscar.Size = New System.Drawing.Size(320, 20)
         Me.TxtBuscar.TabIndex = 1
         '
         'DgbCargoActivos
@@ -207,12 +170,12 @@ Partial Class FrmCargoActivos
         Me.DgbCargoActivos.AllowUserToDeleteRows = False
         Me.DgbCargoActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgbCargoActivos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdArticulo, Me.CodigoInventario, Me.NombreA, Me.Nombre, Me.fechaAsignacion, Me.NombreD, Me.NumeroSerie, Me.Descripcion})
-        Me.DgbCargoActivos.Location = New System.Drawing.Point(3, 67)
+        Me.DgbCargoActivos.Location = New System.Drawing.Point(3, 52)
         Me.DgbCargoActivos.Name = "DgbCargoActivos"
         Me.DgbCargoActivos.ReadOnly = True
         Me.DgbCargoActivos.RowHeadersVisible = False
         Me.DgbCargoActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgbCargoActivos.Size = New System.Drawing.Size(1083, 138)
+        Me.DgbCargoActivos.Size = New System.Drawing.Size(920, 138)
         Me.DgbCargoActivos.TabIndex = 0
         '
         'IdArticulo
@@ -281,39 +244,12 @@ Partial Class FrmCargoActivos
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(888, 182)
+        Me.BtnCancelar.Location = New System.Drawing.Point(887, 72)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(73, 23)
         Me.BtnCancelar.TabIndex = 83
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
-        '
-        'BtnBorrar
-        '
-        Me.BtnBorrar.Location = New System.Drawing.Point(887, 121)
-        Me.BtnBorrar.Name = "BtnBorrar"
-        Me.BtnBorrar.Size = New System.Drawing.Size(73, 23)
-        Me.BtnBorrar.TabIndex = 82
-        Me.BtnBorrar.Text = "Eliminar"
-        Me.BtnBorrar.UseVisualStyleBackColor = True
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.Location = New System.Drawing.Point(808, 121)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(73, 23)
-        Me.BtnEditar.TabIndex = 81
-        Me.BtnEditar.Text = "Editar"
-        Me.BtnEditar.UseVisualStyleBackColor = True
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Location = New System.Drawing.Point(887, 72)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(73, 23)
-        Me.BtnGuardar.TabIndex = 80
-        Me.BtnGuardar.Text = "Guardar"
-        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'BtnNuevo
         '
@@ -323,141 +259,6 @@ Partial Class FrmCargoActivos
         Me.BtnNuevo.TabIndex = 79
         Me.BtnNuevo.Text = "Nuevo"
         Me.BtnNuevo.UseVisualStyleBackColor = True
-        '
-        'TxtCodigo
-        '
-        Me.TxtCodigo.Location = New System.Drawing.Point(30, 560)
-        Me.TxtCodigo.Name = "TxtCodigo"
-        Me.TxtCodigo.Size = New System.Drawing.Size(121, 20)
-        Me.TxtCodigo.TabIndex = 78
-        '
-        'txtNombreArt
-        '
-        Me.txtNombreArt.Location = New System.Drawing.Point(424, 567)
-        Me.txtNombreArt.Name = "txtNombreArt"
-        Me.txtNombreArt.ReadOnly = True
-        Me.txtNombreArt.Size = New System.Drawing.Size(247, 20)
-        Me.txtNombreArt.TabIndex = 77
-        '
-        'lblnombre
-        '
-        Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(321, 570)
-        Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(85, 13)
-        Me.lblnombre.TabIndex = 75
-        Me.lblnombre.Text = "Nombre  Articulo"
-        '
-        'TxtNserie
-        '
-        Me.TxtNserie.Location = New System.Drawing.Point(857, 560)
-        Me.TxtNserie.Name = "TxtNserie"
-        Me.TxtNserie.ReadOnly = True
-        Me.TxtNserie.Size = New System.Drawing.Size(120, 20)
-        Me.TxtNserie.TabIndex = 96
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(751, 560)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 13)
-        Me.Label5.TabIndex = 95
-        Me.Label5.Text = "Numero de serie"
-        '
-        'CboEstado
-        '
-        Me.CboEstado.FormattingEnabled = True
-        Me.CboEstado.Items.AddRange(New Object() {"Nuevo", "Usado"})
-        Me.CboEstado.Location = New System.Drawing.Point(856, 601)
-        Me.CboEstado.Name = "CboEstado"
-        Me.CboEstado.Size = New System.Drawing.Size(121, 21)
-        Me.CboEstado.TabIndex = 97
-        '
-        'lblestado
-        '
-        Me.lblestado.AutoSize = True
-        Me.lblestado.Location = New System.Drawing.Point(750, 607)
-        Me.lblestado.Name = "lblestado"
-        Me.lblestado.Size = New System.Drawing.Size(73, 13)
-        Me.lblestado.TabIndex = 98
-        Me.lblestado.Text = "Estado Activo"
-        '
-        'TxtNombreE
-        '
-        Me.TxtNombreE.Location = New System.Drawing.Point(424, 593)
-        Me.TxtNombreE.Name = "TxtNombreE"
-        Me.TxtNombreE.ReadOnly = True
-        Me.TxtNombreE.Size = New System.Drawing.Size(247, 20)
-        Me.TxtNombreE.TabIndex = 100
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(321, 597)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 13)
-        Me.Label3.TabIndex = 99
-        Me.Label3.Text = "Nombre empleado"
-        '
-        'TxtCodigoInv
-        '
-        Me.TxtCodigoInv.Location = New System.Drawing.Point(856, 638)
-        Me.TxtCodigoInv.Name = "TxtCodigoInv"
-        Me.TxtCodigoInv.Size = New System.Drawing.Size(121, 20)
-        Me.TxtCodigoInv.TabIndex = 102
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(750, 644)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 13)
-        Me.Label6.TabIndex = 101
-        Me.Label6.Text = "Codigo Inventario"
-        '
-        'TxtCurp
-        '
-        Me.TxtCurp.Location = New System.Drawing.Point(30, 586)
-        Me.TxtCurp.Name = "TxtCurp"
-        Me.TxtCurp.Size = New System.Drawing.Size(121, 20)
-        Me.TxtCurp.TabIndex = 104
-        '
-        'BtnCurp
-        '
-        Me.BtnCurp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCurp.Location = New System.Drawing.Point(173, 593)
-        Me.BtnCurp.Name = "BtnCurp"
-        Me.BtnCurp.Size = New System.Drawing.Size(28, 24)
-        Me.BtnCurp.TabIndex = 106
-        Me.BtnCurp.Text = "..."
-        Me.BtnCurp.UseVisualStyleBackColor = True
-        '
-        'Btncodigo
-        '
-        Me.Btncodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btncodigo.Location = New System.Drawing.Point(173, 560)
-        Me.Btncodigo.Name = "Btncodigo"
-        Me.Btncodigo.Size = New System.Drawing.Size(28, 27)
-        Me.Btncodigo.TabIndex = 105
-        Me.Btncodigo.Text = "..."
-        Me.Btncodigo.UseVisualStyleBackColor = True
-        '
-        'TxtDepartamento
-        '
-        Me.TxtDepartamento.Location = New System.Drawing.Point(30, 612)
-        Me.TxtDepartamento.Name = "TxtDepartamento"
-        Me.TxtDepartamento.ReadOnly = True
-        Me.TxtDepartamento.Size = New System.Drawing.Size(120, 20)
-        Me.TxtDepartamento.TabIndex = 108
-        '
-        'TxtDescripcion
-        '
-        Me.TxtDescripcion.Location = New System.Drawing.Point(30, 638)
-        Me.TxtDescripcion.Multiline = True
-        Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(236, 31)
-        Me.TxtDescripcion.TabIndex = 111
         '
         'TxtIdArticulo
         '
@@ -784,12 +585,240 @@ Partial Class FrmCargoActivos
         Me.Label8.TabIndex = 127
         Me.Label8.Text = "E. Activo:"
         '
+        'Guna2BtnGuardar
+        '
+        Me.Guna2BtnGuardar.Animated = True
+        Me.Guna2BtnGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2BtnGuardar.BorderRadius = 7
+        Me.Guna2BtnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BtnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BtnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2BtnGuardar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2BtnGuardar.FillColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Guna2BtnGuardar.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!)
+        Me.Guna2BtnGuardar.ForeColor = System.Drawing.Color.White
+        Me.Guna2BtnGuardar.Location = New System.Drawing.Point(836, 121)
+        Me.Guna2BtnGuardar.Name = "Guna2BtnGuardar"
+        Me.Guna2BtnGuardar.Size = New System.Drawing.Size(93, 35)
+        Me.Guna2BtnGuardar.TabIndex = 128
+        Me.Guna2BtnGuardar.Text = "Guardar"
+        '
+        'Guna2BntEditar
+        '
+        Me.Guna2BntEditar.Animated = True
+        Me.Guna2BntEditar.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2BntEditar.BorderRadius = 7
+        Me.Guna2BntEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BntEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BntEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2BntEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2BntEditar.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.Guna2BntEditar.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!)
+        Me.Guna2BntEditar.ForeColor = System.Drawing.Color.White
+        Me.Guna2BntEditar.Location = New System.Drawing.Point(836, 162)
+        Me.Guna2BntEditar.Name = "Guna2BntEditar"
+        Me.Guna2BntEditar.Size = New System.Drawing.Size(93, 35)
+        Me.Guna2BntEditar.TabIndex = 129
+        Me.Guna2BntEditar.Text = "Editar"
+        '
+        'Guna2BtnBorrar
+        '
+        Me.Guna2BtnBorrar.Animated = True
+        Me.Guna2BtnBorrar.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2BtnBorrar.BorderRadius = 7
+        Me.Guna2BtnBorrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BtnBorrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BtnBorrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2BtnBorrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2BtnBorrar.FillColor = System.Drawing.Color.Brown
+        Me.Guna2BtnBorrar.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!)
+        Me.Guna2BtnBorrar.ForeColor = System.Drawing.Color.White
+        Me.Guna2BtnBorrar.Location = New System.Drawing.Point(836, 205)
+        Me.Guna2BtnBorrar.Name = "Guna2BtnBorrar"
+        Me.Guna2BtnBorrar.Size = New System.Drawing.Size(93, 35)
+        Me.Guna2BtnBorrar.TabIndex = 130
+        Me.Guna2BtnBorrar.Text = "Eliminar"
+        '
+        'Guna2BtnBuscar
+        '
+        Me.Guna2BtnBuscar.Animated = True
+        Me.Guna2BtnBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2BtnBuscar.BorderRadius = 7
+        Me.Guna2BtnBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BtnBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2BtnBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2BtnBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2BtnBuscar.FillColor = System.Drawing.Color.SteelBlue
+        Me.Guna2BtnBuscar.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!)
+        Me.Guna2BtnBuscar.ForeColor = System.Drawing.Color.White
+        Me.Guna2BtnBuscar.Location = New System.Drawing.Point(836, 246)
+        Me.Guna2BtnBuscar.Name = "Guna2BtnBuscar"
+        Me.Guna2BtnBuscar.Size = New System.Drawing.Size(93, 35)
+        Me.Guna2BtnBuscar.TabIndex = 131
+        Me.Guna2BtnBuscar.Text = "Buscar"
+        '
+        'TxtCodigoInv
+        '
+        Me.TxtCodigoInv.Location = New System.Drawing.Point(856, 638)
+        Me.TxtCodigoInv.Name = "TxtCodigoInv"
+        Me.TxtCodigoInv.Size = New System.Drawing.Size(121, 20)
+        Me.TxtCodigoInv.TabIndex = 102
+        '
+        'CboEstado
+        '
+        Me.CboEstado.FormattingEnabled = True
+        Me.CboEstado.Items.AddRange(New Object() {"Nuevo", "Usado"})
+        Me.CboEstado.Location = New System.Drawing.Point(856, 601)
+        Me.CboEstado.Name = "CboEstado"
+        Me.CboEstado.Size = New System.Drawing.Size(121, 21)
+        Me.CboEstado.TabIndex = 97
+        '
+        'TxtNserie
+        '
+        Me.TxtNserie.Location = New System.Drawing.Point(857, 560)
+        Me.TxtNserie.Name = "TxtNserie"
+        Me.TxtNserie.ReadOnly = True
+        Me.TxtNserie.Size = New System.Drawing.Size(120, 20)
+        Me.TxtNserie.TabIndex = 96
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(750, 644)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(90, 13)
+        Me.Label6.TabIndex = 101
+        Me.Label6.Text = "Codigo Inventario"
+        '
+        'lblestado
+        '
+        Me.lblestado.AutoSize = True
+        Me.lblestado.Location = New System.Drawing.Point(750, 607)
+        Me.lblestado.Name = "lblestado"
+        Me.lblestado.Size = New System.Drawing.Size(73, 13)
+        Me.lblestado.TabIndex = 98
+        Me.lblestado.Text = "Estado Activo"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(751, 560)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(84, 13)
+        Me.Label5.TabIndex = 95
+        Me.Label5.Text = "Numero de serie"
+        '
+        'DTPFechaEntrega
+        '
+        Me.DTPFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTPFechaEntrega.Location = New System.Drawing.Point(424, 622)
+        Me.DTPFechaEntrega.Name = "DTPFechaEntrega"
+        Me.DTPFechaEntrega.Size = New System.Drawing.Size(247, 20)
+        Me.DTPFechaEntrega.TabIndex = 94
+        '
+        'TxtNombreE
+        '
+        Me.TxtNombreE.Location = New System.Drawing.Point(424, 593)
+        Me.TxtNombreE.Name = "TxtNombreE"
+        Me.TxtNombreE.ReadOnly = True
+        Me.TxtNombreE.Size = New System.Drawing.Size(247, 20)
+        Me.TxtNombreE.TabIndex = 100
+        '
+        'txtNombreArt
+        '
+        Me.txtNombreArt.Location = New System.Drawing.Point(424, 567)
+        Me.txtNombreArt.Name = "txtNombreArt"
+        Me.txtNombreArt.ReadOnly = True
+        Me.txtNombreArt.Size = New System.Drawing.Size(247, 20)
+        Me.txtNombreArt.TabIndex = 77
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(321, 626)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 13)
+        Me.Label4.TabIndex = 93
+        Me.Label4.Text = "Fecha de Compra"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(321, 597)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 13)
+        Me.Label3.TabIndex = 99
+        Me.Label3.Text = "Nombre empleado"
+        '
+        'lblnombre
+        '
+        Me.lblnombre.AutoSize = True
+        Me.lblnombre.Location = New System.Drawing.Point(321, 570)
+        Me.lblnombre.Name = "lblnombre"
+        Me.lblnombre.Size = New System.Drawing.Size(85, 13)
+        Me.lblnombre.TabIndex = 75
+        Me.lblnombre.Text = "Nombre  Articulo"
+        '
+        'BtnCurp
+        '
+        Me.BtnCurp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCurp.Location = New System.Drawing.Point(173, 593)
+        Me.BtnCurp.Name = "BtnCurp"
+        Me.BtnCurp.Size = New System.Drawing.Size(28, 24)
+        Me.BtnCurp.TabIndex = 106
+        Me.BtnCurp.Text = "..."
+        Me.BtnCurp.UseVisualStyleBackColor = True
+        '
+        'Btncodigo
+        '
+        Me.Btncodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btncodigo.Location = New System.Drawing.Point(173, 560)
+        Me.Btncodigo.Name = "Btncodigo"
+        Me.Btncodigo.Size = New System.Drawing.Size(28, 27)
+        Me.Btncodigo.TabIndex = 105
+        Me.Btncodigo.Text = "..."
+        Me.Btncodigo.UseVisualStyleBackColor = True
+        '
+        'TxtDescripcion
+        '
+        Me.TxtDescripcion.Location = New System.Drawing.Point(30, 638)
+        Me.TxtDescripcion.Multiline = True
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.Size = New System.Drawing.Size(236, 31)
+        Me.TxtDescripcion.TabIndex = 111
+        '
+        'TxtDepartamento
+        '
+        Me.TxtDepartamento.Location = New System.Drawing.Point(30, 612)
+        Me.TxtDepartamento.Name = "TxtDepartamento"
+        Me.TxtDepartamento.ReadOnly = True
+        Me.TxtDepartamento.Size = New System.Drawing.Size(120, 20)
+        Me.TxtDepartamento.TabIndex = 108
+        '
+        'TxtCurp
+        '
+        Me.TxtCurp.Location = New System.Drawing.Point(30, 586)
+        Me.TxtCurp.Name = "TxtCurp"
+        Me.TxtCurp.Size = New System.Drawing.Size(121, 20)
+        Me.TxtCurp.TabIndex = 104
+        '
+        'TxtCodigo
+        '
+        Me.TxtCodigo.Location = New System.Drawing.Point(30, 560)
+        Me.TxtCodigo.Name = "TxtCodigo"
+        Me.TxtCodigo.Size = New System.Drawing.Size(121, 20)
+        Me.TxtCodigo.TabIndex = 78
+        '
         'FrmCargoActivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1098, 719)
+        Me.ClientSize = New System.Drawing.Size(1027, 719)
+        Me.Controls.Add(Me.Guna2BtnBuscar)
+        Me.Controls.Add(Me.Guna2BtnBorrar)
+        Me.Controls.Add(Me.Guna2BntEditar)
+        Me.Controls.Add(Me.Guna2BtnGuardar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Guna2CboEstado)
         Me.Controls.Add(Me.Guna2TxtCodigoInv)
@@ -821,12 +850,8 @@ Partial Class FrmCargoActivos
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.DTPFechaEntrega)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.TxtId)
         Me.Controls.Add(Me.BtnCancelar)
-        Me.Controls.Add(Me.BtnBorrar)
-        Me.Controls.Add(Me.BtnEditar)
-        Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.TxtCodigo)
         Me.Controls.Add(Me.txtNombreArt)
@@ -843,10 +868,6 @@ Partial Class FrmCargoActivos
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents DTPFechaEntrega As DateTimePicker
-    Friend WithEvents Label4 As Label
-    Friend WithEvents BtnBuscar As Button
     Friend WithEvents TxtId As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RbCodigoA As RadioButton
@@ -854,30 +875,10 @@ Partial Class FrmCargoActivos
     Friend WithEvents rbNombreA As RadioButton
     Friend WithEvents LblTotal As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents TxtBuscar As TextBox
     Friend WithEvents DgbCargoActivos As DataGridView
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnBorrar As Button
-    Friend WithEvents BtnEditar As Button
-    Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnNuevo As Button
-    Friend WithEvents TxtCodigo As TextBox
-    Friend WithEvents txtNombreArt As TextBox
-    Friend WithEvents lblnombre As Label
-    Friend WithEvents TxtNserie As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents CboEstado As ComboBox
-    Friend WithEvents lblestado As Label
-    Friend WithEvents TxtNombreE As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TxtCodigoInv As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TxtCurp As TextBox
-    Friend WithEvents BtnCurp As Button
-    Friend WithEvents Btncodigo As Button
-    Friend WithEvents TxtDepartamento As TextBox
-    Friend WithEvents TxtDescripcion As TextBox
     Friend WithEvents TxtIdArticulo As TextBox
     Friend WithEvents TxtIdEmpleado As TextBox
     Friend WithEvents IdArticulo As DataGridViewTextBoxColumn
@@ -903,4 +904,26 @@ Partial Class FrmCargoActivos
     Friend WithEvents Guna2CboEstado As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Guna2TxtCodigoInv As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2TxtNSerie As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2BtnGuardar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2BtnBorrar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2BntEditar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2BtnBuscar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents TxtDescripcion As TextBox
+    Friend WithEvents TxtDepartamento As TextBox
+    Friend WithEvents BtnCurp As Button
+    Friend WithEvents Btncodigo As Button
+    Friend WithEvents TxtCurp As TextBox
+    Friend WithEvents TxtCodigoInv As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TxtNombreE As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblestado As Label
+    Friend WithEvents CboEstado As ComboBox
+    Friend WithEvents TxtNserie As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents DTPFechaEntrega As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtCodigo As TextBox
+    Friend WithEvents txtNombreArt As TextBox
+    Friend WithEvents lblnombre As Label
 End Class
