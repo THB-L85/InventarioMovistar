@@ -94,9 +94,9 @@ Public Class FrmBuscarArticulos
         On Error Resume Next
 
         FrmCargoActivos.TxtIdArticulo.Text = CStr(DgbArticulos.Item("IdArticulo", DgbArticulos.CurrentCell.RowIndex).Value)
-        FrmcargoActivos.txtNombreArt.Text = CStr(DgbArticulos.Item("NombreA", DgbArticulos.CurrentCell.RowIndex).Value)
-        FrmcargoActivos.TxtNserie.Text = CStr(DgbArticulos.Item("NumeroSerie", DgbArticulos.CurrentCell.RowIndex).Value)
-        FrmcargoActivos.TxtCodigo.Text = CStr(DgbArticulos.Item("CodigoA", DgbArticulos.CurrentCell.RowIndex).Value)
+        FrmcargoActivos.Guna2TxtNombreArt.Text = CStr(DgbArticulos.Item("NombreA", DgbArticulos.CurrentCell.RowIndex).Value)
+        FrmcargoActivos.Guna2TxtNSerie.Text = CStr(DgbArticulos.Item("NumeroSerie", DgbArticulos.CurrentCell.RowIndex).Value)
+        FrmcargoActivos.Guna2TxtCodigo.Text = CStr(DgbArticulos.Item("CodigoA", DgbArticulos.CurrentCell.RowIndex).Value)
         Me.Close()
 
     End Sub

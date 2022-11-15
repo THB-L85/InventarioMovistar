@@ -297,11 +297,11 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+    Private Sub Label5_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TxtNserie.TextChanged
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -324,7 +324,7 @@ Public Class FrmCargoActivos
         limpiarcontroles()
     End Sub
 
-    Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles Guna2TxtCodigo.TextChanged, TxtCodigo.TextChanged
+    Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles Guna2TxtCodigo.TextChanged
         If Guna2TxtCodigo.Text <> "" Then
             adaptador = New SqlDataAdapter("SELECT IdArticulo,NombreA,NumeroSerie FROM Articulo WHERE CodigoA='" & Guna2TxtCodigo.Text & "'", obtenerconexion)
             Dim tabla As New DataTable
@@ -346,7 +346,7 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub TxtCurp_TextChanged(sender As Object, e As EventArgs) Handles Guna2TxtCurp.TextChanged, TxtCurp.TextChanged
+    Private Sub TxtCurp_TextChanged(sender As Object, e As EventArgs) Handles Guna2TxtCurp.TextChanged
         If Guna2TxtCodigo.Text <> "" Then
             adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado,Empleados.Nombre,Departamentos.NombreD FROM Departamentos INNER JOIN Empleados ON departamentos.IdDepartamento = Empleados.IdDepartamento WHERE Curp='" & Guna2TxtCurp.Text & "'", obtenerconexion)
             Dim tabla As New DataTable
@@ -364,7 +364,7 @@ Public Class FrmCargoActivos
             End If
         End If
     End Sub
-    Private Sub Btncodigo_Click(sender As Object, e As EventArgs) Handles Guna2Btncodigo.Click, Btncodigo.Click
+    Private Sub Btncodigo_Click(sender As Object, e As EventArgs) Handles Guna2Btncodigo.Click
         Dim frmbusquedaarticulos As New FrmBuscarArticulos
         frmbusquedaarticulos.ShowDialog()
 
@@ -372,27 +372,27 @@ Public Class FrmCargoActivos
     End Sub
     Dim FrmBusquedaEmpleado As New FrmBusquedaEmpleado
 
-    Private Sub BtnCurp_Click(sender As Object, e As EventArgs) Handles Guna2BtnCurp.Click, BtnCurp.Click
+    Private Sub BtnCurp_Click(sender As Object, e As EventArgs) Handles Guna2BtnCurp.Click
 
         FrmBusquedaEmpleado.ShowDialog()
     End Sub
 
-    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged, Guna2TxtBuscar.TextChanged
         buscardatos()
 
     End Sub
 
-    Private Sub rbNombreA_CheckedChanged(sender As Object, e As EventArgs) Handles rbNombreA.CheckedChanged
+    Private Sub rbNombreA_CheckedChanged(sender As Object, e As EventArgs) Handles rbNombreA.CheckedChanged, Guna2RbNombreA.CheckedChanged
         TxtBuscar.Focus()
 
     End Sub
 
-    Private Sub Rbfecha_CheckedChanged(sender As Object, e As EventArgs) Handles Rbfecha.CheckedChanged
+    Private Sub Rbfecha_CheckedChanged(sender As Object, e As EventArgs) Handles Rbfecha.CheckedChanged, Guna2RbFecha.CheckedChanged
         TxtBuscar.Focus()
 
     End Sub
 
-    Private Sub RbCodigoA_CheckedChanged(sender As Object, e As EventArgs) Handles RbCodigoA.CheckedChanged
+    Private Sub RbCodigoA_CheckedChanged(sender As Object, e As EventArgs) Handles RbCodigoA.CheckedChanged, Guna2RbCodigoA.CheckedChanged
         TxtBuscar.Focus()
 
     End Sub
