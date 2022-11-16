@@ -305,13 +305,13 @@ Public Class FrmCargoActivos
 
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, Guna2BtnCancelar.Click
         desactivarcontroles()
         limpiarcontroles()
 
     End Sub
 
-    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click, Guna2BtnNuevo.Click
         activarcontroles()
         limpiarcontroles()
 
